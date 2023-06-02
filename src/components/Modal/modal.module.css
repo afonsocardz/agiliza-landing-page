@@ -1,0 +1,63 @@
+.modal-container {
+    background-color: rgba(245, 145, 30, 0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal-box {
+    display:flex;
+    flex-direction: column;
+    width: 551px;
+    background-color: white;
+    padding: 39px;
+    border-radius: 27.5px;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+button.continue {
+    background-color: green;
+}
+
+button.yes-button {
+    background-color: blue;
+}
+
+button.no-button {
+    background-color: orange;
+    margin-right: 10px;
+}
+
+.modal-row{
+    display:flex;
+    justify-content: space-around;
+}
+
+.modal-search-text {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right:8px;
+    margin-bottom:34px;
+}
+
+.modal-box button {
+    color: white;
+    font-weight: 700;
+    border-radius: 26.39px;
+    width: 168px;
+    height: 53px;
+    font-size:20px;
+}
+
+.modal-box input {
+    border: 2px solid orange;
+}
