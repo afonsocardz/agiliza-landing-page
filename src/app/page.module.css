@@ -1,15 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
-
-* {
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-body {
-    font-family: 'inter', sans-serif;
-    color: #08273A;
-}
-
 button {
     font-family: 'inter', sans-serif;
     border: none;
@@ -18,11 +6,6 @@ button {
     transition-timing-function: ease-in-out;
     cursor: pointer;
 }
-
-button:hover {
-    opacity: 80%;
-}
-
 
 .container {
     display: flex;
