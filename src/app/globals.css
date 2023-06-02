@@ -16,6 +16,117 @@ a {
   color: inherit;
 }
 
+button {
+  font-family: 'inter', sans-serif;
+  border: none;
+  transition-property: opacity, color, border, background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
 button:hover {
   opacity: 80%;
+}
+
+header {
+  width: inherit;
+  height: 64px;
+  position: fixed;
+  padding: 0 35px;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  background-color: white;
+  z-index: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form>span {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: darkgray;
+}
+
+form span {
+  font-size: 20px;
+}
+
+form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  color: white;
+  height: 43px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 21.5px;
+  width: 121px;
+}
+
+footer {
+  height: 64px;
+  background-color: orange;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email] {
+  font-family: 'inter', sans-serif;
+  height: 43px;
+  width: 100%;
+  border: 2px solid orange;
+  background-color: white;
+  border-radius: 21.5px;
+  padding: 17px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  transition: border 0.5s ease-in-out;
+}
+
+img {
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1070px) {
+  header {
+    width: 100%;
+  }
+
+  h1 {
+    margin-left: 35px;
+    position: absolute;
+    color: white
+  }
+}
+
+@media screen and (max-width:786px) {
+  header {
+    padding: 0 15px;
+  }
+}
+
+input[type=checkbox] {
+  width: 15px;
+  height: 15px;
 }
