@@ -1,90 +1,22 @@
-button {
-    font-family: 'inter', sans-serif;
-    border: none;
-    transition-property: opacity, color, border, background-color;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in-out;
-    cursor: pointer;
-}
-
 .container {
     display: flex;
     width: 100%;
 }
 
-.main-container.blur{
+.main-container.blur {
     filter: blur(5px);
 }
 
-.modal-container {
-    background-color: rgba(245, 145, 30, 0.8);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 2;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
 
-.modal-container.hidden, .modal-container .hidden  {
+
+.modal-container.hidden,
+.modal-container .hidden {
     opacity: 0;
 }
 
-.modal-container.none, .modal-container .none {
+.modal-container.none,
+.modal-container .none {
     display: none;
-}
-
-.modal-box {
-    display:flex;
-    flex-direction: column;
-    width: 551px;
-    background-color: white;
-    padding: 39px;
-    border-radius: 27.5px;
-    align-items: center;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-
-.modal-row{
-    display:flex;
-    justify-content: space-around;
-}
-
-.modal-search-text {
-    font-size: 20px;
-    font-weight: 700;
-    margin-right:8px;
-    margin-bottom:34px;
-}
-
-.modal-box button {
-    color: white;
-    font-weight: 700;
-    border-radius: 26.39px;
-    width: 168px;
-    height: 53px;
-    font-size:20px;
-}
-
-.modal-box input {
-    border: 2px solid orange;
-}
-
-button.continue {
-    background-color: green;
-}
-
-button.yes-button{
-    background-color: blue;
-}
-
-button.no-button{
-    background-color: orange;
 }
 
 .hero-container {
@@ -106,20 +38,6 @@ button.no-button{
     width: 70%;
     display: flex;
     flex-direction: column;
-}
-
-header {
-    width: inherit;
-    height: 64px;
-    position: fixed;
-    padding: 0 35px;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
-    background-color: white;
-    z-index: 1;
 }
 
 .contact-container {
@@ -208,41 +126,8 @@ header {
     margin-right: 35px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form>span {
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-
-input[type=text], input[type=tel], input[type=email] {
-    font-family: 'inter', sans-serif;
-    height: 43px;
-    width: 100%;
-    border: 2px solid orange;
-    background-color: white;
-    border-radius: 21.5px;
-    padding: 17px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    transition: border 0.5s ease-in-out;
-}
-
 form.active input {
     border: 2px solid green;
-}
-
-input::placeholder {
-    color: darkgray;
-}
-
-form span {
-    font-size: 20px;
 }
 
 .row-form {
@@ -255,18 +140,6 @@ form span {
     margin-right: 0;
 }
 
-form button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: orange;
-    color: white;
-    height: 43px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 21.5px;
-    width: 121px;
-}
 
 button.success {
     background-color: rgb(43, 170, 43);
@@ -311,7 +184,7 @@ button.error {
     cursor: pointer;
 }
 
-.etc:hover{
+.etc:hover {
     color: orange;
 }
 
@@ -358,7 +231,7 @@ button.error {
     flex-direction: column;
 }
 
-.tip .tip-title{
+.tip .tip-title {
     font-weight: 500;
 }
 
@@ -421,36 +294,14 @@ button.error {
     cursor: pointer;
 }
 
-footer {
-    height: 64px;
-    background-color: orange;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .link:hover {
     cursor: pointer;
     color: orange;
 }
 
-img{
-    transition: transform 0.5s ease-in-out;
-    cursor: pointer;
-}
-
-img:hover{
-    transform: scale(1.1);
-}
-
 @media screen and (max-width: 1070px) {
     .hero-container {
         display: none;
-    }
-
-    header {
-        width: 100%;
     }
 
     .content-container {
@@ -469,11 +320,6 @@ img:hover{
         overflow: hidden;
     }
 
-    h1 {
-        margin-left: 35px;
-        position: absolute;
-        color: white
-    }
 
     .main-column {
         margin-left: 35px;
@@ -510,10 +356,6 @@ img:hover{
 
 @media screen and (max-width:786px) {
 
-    header {
-        padding: 0 15px;
-    }
-
     .row {
         padding: 0 15px;
         flex-direction: column;
@@ -547,7 +389,7 @@ img:hover{
     }
 }
 
-.custom-checkbox{
+.custom-checkbox {
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -555,9 +397,4 @@ img:hover{
     margin-right: 8px;
     margin-left: 15px;
     margin-bottom: 20px;
-}
-
-input[type=checkbox]{
-    width: 15px;
-    height: 15px;
 }
