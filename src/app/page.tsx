@@ -1,95 +1,55 @@
+'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
+import Modal from '@/components/Modal/Modal'
+import { Dispatch, SetStateAction, useState, createContext } from 'react'
+import styled from 'styled-components'
+import Header from '@/layouts/Header'
+import TitleContainer from '@/components/TitleContainer/TitleContainer'
+import MainColumn from '@/layouts/MainColumn'
+import AsideColumn from '@/layouts/AsideColumn'
+
+interface MainStyle {
+    hasBlur: boolean;
+}
+
+const Main = styled.div<MainStyle>`
+  filter: ${({ hasBlur }) => hasBlur ? "blur(5px)" : "unset"};
+`
+
+interface HomeContextInitial {
+    setHasBlur: Dispatch<SetStateAction<boolean>>
+}
+export const HomeContext = createContext({} as HomeContextInitial);
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    const [hasBlur, setHasBlur] = useState(true);
+    return (
+        <HomeContext.Provider value={{ setHasBlur }}>
+            <div className={styles.container}>
+                <Modal setHasBlur={setHasBlur} hasBlur={hasBlur} />
+                <div className={styles["hero-container"]}>
+                    <Image height={100} width={100} src="/imgs/hero-image.jpg" alt="" />
+                </div>
+                <Main className={styles["main-container"]} hasBlur={hasBlur} >
+                    <Header />
+                    <div className={styles["content-container"]}>
+                        <TitleContainer />
+                        <div className={styles["row"]}>
+                            <MainColumn />
+                            <AsideColumn />
+                        </div>
+                        <div className={styles["show-more-container"]}>
+                            <div className={styles["show-more"]}>
+                                <span onClick={() => setHasBlur(true)}>Ver mais</span>
+                            </div>
+                        </div>
+                    </div>
+                    <footer>
+                        <span>Todos os direitos reservados - Agiliza Estágio</span>
+                    </footer>
+                </Main >
+            </div >
+        </HomeContext.Provider>
+    )
 }
